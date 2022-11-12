@@ -1,8 +1,16 @@
 class Solution {
-        public int[] sumZero(int n) {
-        int[] A = new int[n];
-        for (int i = 0; i < n; ++i)
-            A[i] = i * 2 - n + 1;
-        return A; 
+    public int[] sumZero(int n) {
+     int[] ans = new int[n];
+       int start = 0;
+        int end = n - 1;
+        
+        while(start < end){
+            ans[start] = start + 1;
+            ans[end] = ans[start] * (-1);
+            start++;
+            end--;
+        }
+        
+        return ans;   
     }
 }
